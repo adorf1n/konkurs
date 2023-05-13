@@ -1,0 +1,102 @@
+.logIn {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url("../../img/login-img.png");
+}
+
+.logInMain {
+  padding: 40px 50px 60px;
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: #79848a50;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px 0px #00000059;
+}
+
+.logInNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logInForm {
+  margin-top: 30px;
+  gap: 20px;
+  position: relative;
+}
+
+.logInLink {
+  color: white;
+  font-size: 28px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid rgb(0, 225, 255);
+}
+.signInLink {
+  color: gray;
+  font-size: 28px;
+}
+
+.passwordWrap {
+  margin-top: 20px;
+}
+
+.usernameTitle,
+.passwordTitle {
+  color: white;
+  font-size: 26px;
+  text-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.usernameInput,
+.passwordInput {
+  width: 100%;
+  height: 50px;
+  background: #d9d9d966;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  margin-top: 15px;
+  padding: 0 15px;
+  font-size: 24px;
+  color: rgb(100, 100, 100);
+}
+
+.passwordInput {
+  padding-right: 60px;
+}
+
+.btnSend {
+  color: white;
+  font-size: 22px;
+  background-color: #1058fe;
+  box-shadow: 0px 2px 10px 0px #0000004d;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 60px auto 0;
+  cursor: pointer;
+}
+
+.show {
+  display: none;
+}
+
+.customCheck {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: url('/src/img/eye.svg') no-repeat;
+  background-size: cover;
+  left: 87%;
+  transform: translateY(-36px);
+  opacity: 0.6;
+}
+
+.show:checked + .customCheck {
+  background: url('/src/img/eye-blocked.svg') no-repeat;
+  background-size: cover;
+}
