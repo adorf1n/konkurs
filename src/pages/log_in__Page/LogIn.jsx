@@ -1,12 +1,21 @@
 /* eslint-disable no-console */
 import styles from './LogIn.module.scss';
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { loginUser } from '../../API/request';
 
 
 const LogIn = () => {
+
+  const localId = localStorage.getItem('userId');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localId) {
+      navigate('/questionsblock');
+    }
+  }, []);
+  
   const [userData, setUserData] = useState({ id: '', login: '', password: '' });
 
   const loginHandlerChange = (event) => {
@@ -28,7 +37,7 @@ const LogIn = () => {
   };
 
   const checkUser = async () => {
-    const compareUser = await loginUser(userData);
+      const compareUser = await loginUser(userData);
 
     if (compareUser) {
       localStorage.setItem('userId', JSON.stringify(compareUser.id));

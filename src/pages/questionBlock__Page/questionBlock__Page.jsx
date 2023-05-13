@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import styles from "./Main.module.css"
 
 const QuestionBlock__Page = () => {
   const localId = localStorage.getItem('userId');
@@ -11,8 +12,13 @@ const QuestionBlock__Page = () => {
     }
   }, []);
 
+  const logOut = () => {
+    localStorage.clear();
+    navigate('/login');
+  };
+
   return (
-    <div><h1>успешно</h1></div>
+    <div><button className={styles.btnExit} onClick={logOut}>Выход</button></div>
   )
 }
 

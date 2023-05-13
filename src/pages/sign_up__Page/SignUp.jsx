@@ -1,11 +1,21 @@
 import styles from './SignUp.module.css';
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { createUser } from '../../API/request';
 
 const SignUp = () => {
   const [userData, setUserData] = useState({ login: '', password: '' });
+  const localId = localStorage.getItem('userId');
+ 
+  
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localId) {
+      navigate('/questionsblock');
+    }
+  }, []);
 
   const loginHandlerChange = (event) => {
     setUserData((prev) => {
